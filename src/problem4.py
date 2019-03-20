@@ -85,6 +85,24 @@ def problem4(point1, point2, n, window):
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
 
+    point1.attach_to(window)
+    point2.attach_to(window)
+    window.render()
+
+    x_distance = point2.x - point1.x
+    x_distance_per = x_distance / ((2 * n) + 1)
+    y_distance = point2.y - point1.y
+    y_distance_per = y_distance / ((2 * n) + 1)
+
+    for k in range(2 * n):
+        point = rg.Point(point1.x + (x_distance_per * (k + 1)), point1.y + (y_distance_per * (k + 1)))
+        if k < n:
+            point.fill_color = point2.fill_color
+        else:
+            point.fill_color = point1.fill_color
+        point.attach_to(window)
+        window.render()
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
