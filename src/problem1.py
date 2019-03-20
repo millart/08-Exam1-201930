@@ -115,6 +115,7 @@ def problem1(circle, rectangle, color, length, window):
       :type circle:    rg.Circle
       :type rectangle: rg.Rectangle
       :type color:     str
+      :type length:    int
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
